@@ -1,7 +1,6 @@
 // This class represents a vertex in the graph.
 // It contains the vertex's id and name ...and eventually other information
 
-import java.util.ArrayList;
 
 public class Vertex {
     private int id;
@@ -11,4 +10,19 @@ public class Vertex {
         this.id = id;
         this.name = name;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String changeName(String newName) {
+        name = newName;
+        return name;
+    }
+
+    
 }

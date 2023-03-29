@@ -3,14 +3,22 @@
 import java.util.ArrayList;
 
 public class Graph {
-    ArrayList<Vertex> vertices = new ArrayList<Vertex>();   
-    ArrayList<Edge> edges = new ArrayList<Edge>();
+    ArrayList<Vertex> vertices;
+    ArrayList<Edge> edges;
     
     public Graph() {
+        vertices = new ArrayList<Vertex>();
+        edges = new ArrayList<Edge>();
     }
 
-    public void addVertex(Vertex v) {
+    public void addVertex(String name) {
+        Vertex v = new Vertex(vertices.size(), name);
         vertices.add(v);
+    }
+
+    public void addEdge(int v1, int v2) {//v1 and v2 are the ids of the vertices
+        Edge e = new Edge(v1, v2);
+        edges.add(e);
     }
 
 }
