@@ -2,8 +2,6 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
 
-import Graph.Graph;
-
 public class GeomGraph extends Graph{
     public ArrayList<Point> points;
     Random rand = new Random();
@@ -26,10 +24,17 @@ public class GeomGraph extends Graph{
 
     public void addEdge(int v1, int v2) {
         super.addEdge(v1, v2);
+    }
 
-        //draw line between vertex points
-        
-
+    public void drawGraph(Graphics g) {
+        for (Point p : points) {
+            p.drawPoint(g);
+        }
+        for (Edge e : edges) {
+            Point p1 = points.get(e.getV1());
+            Point p2 = points.get(e.getV2());
+            g.drawLine(p1.x, p1.y, p2.x, p2.y);
+        }
     }
 
     
