@@ -26,8 +26,7 @@ public class MainGraphEditor {
             }
         }
 
-        //show drawingFrame with GeomGraph
-        frame.repaint();
+
 
         sc.close();
 

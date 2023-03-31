@@ -17,5 +17,9 @@ public class Edge {
         return v2;
     }
 
+    public String toString() {
+        return "(" + v1 + " <-> " + v2 + ")";
+    }
+
 
 }

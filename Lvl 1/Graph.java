@@ -21,4 +21,16 @@ public class Graph {
         edges.add(e);
     }
 
+    public String toString(){
+        String s = "Vertices:";
+        for (Vertex v : vertices) {
+            s += v.toString() + " ";
+        }
+        s += "Edges:";
+        for (Edge e : edges) {
+            s += e.toString() + " ";
+        }
+        return s;        
+    }
+
 }

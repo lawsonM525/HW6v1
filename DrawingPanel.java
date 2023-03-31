@@ -1,5 +1,8 @@
 import java.awt.*;
 import javax.swing.*;
+
+import Graph.Edge;
+
 import java.util.ArrayList;
 
 public class DrawingPanel extends JPanel {

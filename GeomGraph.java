@@ -2,12 +2,15 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
 
+import Graph.Graph;
+
 public class GeomGraph extends Graph{
     public ArrayList<Point> points;
     Random rand = new Random();
 
     public GeomGraph() {
         super();
+        points = new ArrayList<Point>();
     }  
 
     public void addVertex(String name) {
