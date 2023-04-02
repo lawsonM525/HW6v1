@@ -3,50 +3,50 @@ import java.awt.*;
 import javax.swing.*;
 
 public class GeomGraphTester extends JPanel {
+
+    DrawingFrame frame;
+    GeomGraph g;
+    
+
+    public GeomGraphTester(){
+        g = new GeomGraph();
+        frame = new DrawingFrame(g);
+    }
     
     public void addVertexTester(){
-        System.out.println("TESTING ADDVERTEX");
-        GeomGraph g = new GeomGraph();
-        System.out.println("Graph = " + g.toString());  
+        System.out.println("TESTING ADDVERTEX on drawing frame");
         System.out.println("Adding vertex A");
         g.addVertex("A");
-        System.out.println("Graph = " + g.toString());
+        frame.update(g);
         System.out.println("Adding vertex B");
         g.addVertex("B");
-        System.out.println("Graph = " + g.toString());
+        frame.update(g);
         System.out.println("Adding vertex C");
         g.addVertex("C");
-        System.out.println("Graph = " + g.toString());
+        frame.update(g);  
     }
 
     public void addEdgeTester(){
         System.out.println("TESTING ADDEDGE");
-        GeomGraph g = new GeomGraph();
-        System.out.println("Graph = " + g.toString());
-        System.out.println("Adding vertices A, B and C");
-        g.addVertex("A");
-        g.addVertex("B");
-        g.addVertex("C");
         System.out.println("Graph = " + g.toString());
         System.out.println("Adding edge A-B");
         g.addEdge(0, 1);
+        frame.update(g);
         System.out.println("Graph = " + g.toString());
         System.out.println("Adding edge B-C");
         g.addEdge(1, 2);
+        frame.update(g);
         System.out.println("Graph = " + g.toString());
         System.out.println("Adding edge C-A");
         g.addEdge(2, 0);
+        frame.update(g);
         System.out.println(g.toString());
     }
 
     public static void main(String[] args) {
-        GeomGraphTester gt = new GeomGraphTester();
-        System.out.println(" STARTING TESTS ");
-        System.out.println("");
-        gt.addVertexTester();
-        System.out.println("");
-        gt.addEdgeTester();
-        System.out.println("");
-        System.out.println(" ENDING TESTS ");
+        GeomGraphTester tester = new GeomGraphTester();
+        tester.addVertexTester();
+        tester.addEdgeTester();
+        g.drawGraph(g);
     }
 }

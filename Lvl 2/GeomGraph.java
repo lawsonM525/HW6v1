@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class GeomGraph extends Graph{
     public ArrayList<Point> points;
+    public ArrayList<Edge> edges = new ArrayList<Edge>();
     Random rand = new Random();
 
     public GeomGraph() {
@@ -15,8 +16,8 @@ public class GeomGraph extends Graph{
         super.addVertex(name);
 
         //make a random x and y
-        int x = rand.nextInt(800);
-        int y = rand.nextInt(600);
+        int x = rand.nextInt(500);
+        int y = rand.nextInt(500);
 
         Point p = new Point(x, y, name);
         points.add(p);
@@ -24,6 +25,9 @@ public class GeomGraph extends Graph{
 
     public void addEdge(int v1, int v2) {
         super.addEdge(v1, v2);
+
+        Edge e = new Edge(v1, v2);
+        edges.add(e);
     }
 
     public void drawGraph(Graphics g) {
@@ -31,10 +35,12 @@ public class GeomGraph extends Graph{
             p.drawPoint(g);
         }
         for (Edge e : edges) {
-            Point p1 = points.get(e.getV1());
-            Point p2 = points.get(e.getV2());
-            g.drawLine(p1.x, p1.y, p2.x, p2.y);
+            e.drawEdge(g, points.get(e.getV1()), points.get(e.getV2()));
         }
+    }
+
+    public ArrayList<Point> getPoints() {
+        return points;
     }
 
     
