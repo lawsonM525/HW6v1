@@ -16,8 +16,8 @@ public class GeomGraphTester extends JPanel {
     public void addVertexTester(){
         System.out.println("TESTING ADDVERTEX on drawing frame");
         System.out.println("Adding vertex A");
-        g.addVertex("A");
-        frame.update(g);
+        g.addVertex("A");//add vertex A to graph
+        frame.update(g);// update drawing frame
         System.out.println("Adding vertex B");
         g.addVertex("B");
         frame.update(g);
@@ -47,6 +47,5 @@ public class GeomGraphTester extends JPanel {
         GeomGraphTester tester = new GeomGraphTester();
         tester.addVertexTester();
         tester.addEdgeTester();
-        g.drawGraph(g);
     }
 }
